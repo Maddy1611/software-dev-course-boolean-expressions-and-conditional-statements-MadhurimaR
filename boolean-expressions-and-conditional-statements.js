@@ -28,6 +28,8 @@ const readline = require('readline-sync');
 
 const hasTorch = true;
 const hasMap = false;
+const hasSword = true;
+const hasCompass = false;
 
 console.log("You see two paths: one leads to the mountains, the other to the village.");
 const choice = readline.question("Do you go to the 'mountains' or the 'village'?");
@@ -42,8 +44,6 @@ if (choice === "mountains" && hasTorch) {
   console.log("You get lost and wander aimlessly.");
 }
 
-const hasSword = true;
-const hasCompass = false;
 
 // VILLAGE PATH
 
@@ -55,7 +55,6 @@ if (choice === "village") {
   }
 }
 
-// CAVE PATH (NEW SCENARIO)
 else if (choice === "cave") {
   console.log("You enter a dark cave...");
 
@@ -71,10 +70,12 @@ else if (choice === "cave") {
   } else {
     console.log("You are unprepared and get lost in the darkness...");
   }
+
+} else {
+  console.log("Invalid choice. You hesitate and lose your chance.");
 }
 
-/* 
-
+/*
 Add Customization and expand the game:
   - Add more choices and scenarios.
   - Include additional items (e.g., a sword, a compass).
