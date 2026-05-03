@@ -42,6 +42,37 @@ if (choice === "mountains" && hasTorch) {
   console.log("You get lost and wander aimlessly.");
 }
 
+const hasSword = true;
+const hasCompass = false;
+
+// VILLAGE PATH
+
+if (choice === "village") {
+  if (hasMap || hasCompass) {
+    console.log("You follow your navigation tools and reach the village safely.");
+  } else {
+    console.log("You wander through the village without proper navigation tools.");
+  }
+}
+
+// CAVE PATH (NEW SCENARIO)
+else if (choice === "cave") {
+  console.log("You enter a dark cave...");
+
+  if (hasTorch && hasSword) {
+    console.log("You light your torch and defend yourself with your sword.");
+    console.log("You discover hidden treasure inside the cave!");
+  } else if (hasTorch && !hasSword) {
+    console.log("You light your torch but feel unsafe without a weapon.");
+    console.log("You escape the cave quickly.");
+  } else if (!hasTorch && hasSword) {
+    console.log("It’s too dark, but you bravely move forward with your sword ready.");
+    console.log("You barely make it out safely.");
+  } else {
+    console.log("You are unprepared and get lost in the darkness...");
+  }
+}
+
 /* 
 
 Add Customization and expand the game:
